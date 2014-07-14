@@ -1,2 +1,10 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>Products</h1>
+
+<%= @products.each do |product| %>
+	<p><%= product[:name] %>, <%= product[:description]%> , <%= product[:price_in_cents] %><br />
+		<%= link_to :show, product_path(product) %><br /><%= link_to :edit, edit_product_path(product) %>
+<% end %>
+
+<p><%= link_to :new, new_product_path(@product) %></p>
+
+<!-- Why is an array with all all of the product parameters appearing after the edit link of the last product? -->
