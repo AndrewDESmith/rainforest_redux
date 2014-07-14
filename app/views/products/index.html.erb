@@ -1,7 +1,7 @@
 <h1>Products</h1>
 
-<%= @products.each do |product| %>
-	<p><%= product[:name] %>, <%= product[:description]%> , <%= product[:price_in_cents] %><br />
+<% @products.each do |product| %>
+	<p><%= product.name %>, <%= product.description %>, <%= product.price_in_cents %><br />
 		<%= link_to :show, product_path(product) %><br /><%= link_to :edit, edit_product_path(product) %>
 <% end %>
 
